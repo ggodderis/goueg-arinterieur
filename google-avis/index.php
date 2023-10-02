@@ -62,7 +62,7 @@ echo '<div style="width: 100px">'.STARS.'</div>';
 
 //AIzaSyDWKa7RS621vK56NeCu8y5mnWK_DelComw
 /*
-$url = "https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyDWKa7RS621vK56NeCu8y5mnWK_DelComw&placeid=ChIJK9kCwuRbikcRynJgNYcF2g0&language=fr";
+$url = "https://maps.googleapis.com/maps/api/place/details/json?key=&placeid=ChIJK9kCwuRbikcRynJgNYcF2g0&language=fr";
 $ch = curl_init();
 curl_setopt ($ch, CURLOPT_URL, $url);
 curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -79,44 +79,5 @@ echo '<a href="https://search.google.com/local/writereview?placeid=ChIJK9kCwuRbi
 
 echo '<a href="https://www.linkedin.com/sharing/share-offsite/?url='.urlencode("https://www.magtoo.fr/recettes-de-cuisine-egyptienne/").'">partage</a>';
 
-$date = new DateTime();
-$indice = $date->format('Ymdgis');
-
-echo uniqid();
-
-exit();
-
-$arrayResultats = array();
-
-$mysqli = new mysqli('localhost', 'root', 'gregory1970', 'test_caca');
-
-/// Vérification de la connexion
-if ($mysqli->connect_errno) {
-		printf("Échec de la connexion : %s\n", $mysqli->connect_error);
-		exit();
-}else{
-	echo 'connection';
-}
-
-$query_string = "SELECT * FROM Animal";
-
-if( $result = $mysqli->query($query_string) ){
-
-    $lenght =  mysqli_num_rows($result);
-    
-    for( $i= 0; $i < $lenght; $i++){
-        array_push($arrayResultats,mysqli_fetch_object($result));
-        // echo '<pre>';
-        //     print_r( mysqli_fetch_object($result) );
-        // echo '</pre>';
-    }
-
-}else{
-	echo 'SELECT DOWN...';
-}
-
-echo '<pre>';
-    print_r( json_encode($arrayResultats) );
-echo '</pre>';
 
 ?>
