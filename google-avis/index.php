@@ -63,6 +63,9 @@ echo '<div style="width: 100px">'.STARS.'</div>';
 // rdv sur : https://console.cloud.google.com/apis/credentials/key/992cc7bb-d7fd-4deb-be4c-5091e7ae183f?hl=fr&project=goueg-freelance
 // pour récuperer la key API
 /*
+define('PLACE_ID','ChIJK9kCwuRbikcRynJgNYcF2g0');
+define('API_KEY','');
+
 $url = "https://maps.googleapis.com/maps/api/place/details/json?key=&placeid=ChIJK9kCwuRbikcRynJgNYcF2g0&language=fr";
 $ch = curl_init();
 curl_setopt ($ch, CURLOPT_URL, $url);
