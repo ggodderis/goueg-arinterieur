@@ -60,7 +60,8 @@ define('STARS','<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 178 28.53">
 
 echo '<div style="width: 100px">'.STARS.'</div>';
 
-//AIzaSyDWKa7RS621vK56NeCu8y5mnWK_DelComw
+// rdv sur : https://console.cloud.google.com/apis/credentials/key/992cc7bb-d7fd-4deb-be4c-5091e7ae183f?hl=fr&project=goueg-freelance
+// pour récuperer la key API
 /*
 $url = "https://maps.googleapis.com/maps/api/place/details/json?key=&placeid=ChIJK9kCwuRbikcRynJgNYcF2g0&language=fr";
 $ch = curl_init();
