@@ -62,23 +62,23 @@ echo '<div style="width: 100px">'.STARS.'</div>';
 
 // rdv sur : https://console.cloud.google.com/apis/credentials/key/992cc7bb-d7fd-4deb-be4c-5091e7ae183f?hl=fr&project=goueg-freelance
 // pour récuperer la key API
-/*
+
 define('PLACE_ID','ChIJK9kCwuRbikcRynJgNYcF2g0');
 define('API_KEY','');
 
-$url = "https://maps.googleapis.com/maps/api/place/details/json?key=&placeid=ChIJK9kCwuRbikcRynJgNYcF2g0&language=fr";
+$url = "https://maps.googleapis.com/maps/api/place/details/json?key=".API_KEY."&placeid=".PLACE_ID."&language=fr";
 $ch = curl_init();
 curl_setopt ($ch, CURLOPT_URL, $url);
 curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
 $result = curl_exec ($ch);
 $res        = json_decode($result,true);
-$reviews    = $res['result']['reviews'];
+$reviews    = $res;
 echo 'curl';
 echo '<pre>';
 print_r( $res );
 echo '</pre>';
 echo '<a href="https://search.google.com/local/writereview?placeid=ChIJK9kCwuRbikcRynJgNYcF2g0">Notez moi sur G</a>';
-*/
+/**/
 // https://www.linkedin.com/sharing/share-offsite/?url=https://www.magtoo.fr/recettes-de-cuisine-egyptienne/
 
 echo '<a href="https://www.linkedin.com/sharing/share-offsite/?url='.urlencode("https://www.magtoo.fr/recettes-de-cuisine-egyptienne/").'">partage</a>';
