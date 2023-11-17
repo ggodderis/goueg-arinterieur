@@ -66,7 +66,7 @@ echo '<div style="width: 100px">'.STARS.'</div>';
 define('PLACE_ID','ChIJK9kCwuRbikcRynJgNYcF2g0');
 define('API_KEY','');
 
-$url = "https://maps.googleapis.com/maps/api/place/details/json?key=".API_KEY."&placeid=".PLACE_ID."&language=fr";
+$url = "https://maps.googleapis.com/maps/api/place/details/json?key=".API_KEY."&placeid=".PLACE_ID."&language=fr&reviews_sort=newest";
 $ch = curl_init();
 curl_setopt ($ch, CURLOPT_URL, $url);
 curl_setopt ($ch, CURLOPT_RETURNTRANSFER, 1);
@@ -75,7 +75,8 @@ $res        = json_decode($result,true);
 $reviews    = $res;
 echo 'curl';
 echo '<pre>';
-print_r( $res );
+print_r( $res['result']['rating'] );
+print_r( $res['result']['reviews'] );
 echo '</pre>';
 echo '<a href="https://search.google.com/local/writereview?placeid=ChIJK9kCwuRbikcRynJgNYcF2g0">Notez moi sur G</a>';
 /**/
