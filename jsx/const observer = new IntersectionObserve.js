@@ -1,18 +1,31 @@
-const observer = new IntersectionObserver( (entries) => {
-			for( const entry of entries ){
-				if( entry.isIntersecting ){
-					entry.target.animate( [
-						{ transform: 'translateY(5rem)', opacity : 0 },
-						{ transform: 'translateY(0)', opacity : 1 }
-					], {duration: 400} )
-				}
-			}
-		})
-		
-		//observer.observe( document.querySelector('.wp-block-goueg-presentation, .google_content') )
-		// Mais on peut regarder plusieurs éléments
-		const items = document.querySelectorAll('.wp-block-group, .google_content, .vignette-realisation')
-		
-		for (const item of items) {
-			observer.observe(item)
+/**
+		 *  JS REVEAL sans JQUEY
+		 */
+
+const items = document.querySelectorAll('.js-reveal');
+
+const callback = (entries,observer) => {
+	
+	entries.forEach( (entry) => {
+
+		if( entry.intersectionRatio > 0 ){
+
+			entry.target.style.opacity = 1;
+			 entry.target.style.marginTop = 0;
+
+			observer.unobserve( entry.target );
 		}
+
+	})
+
+}
+
+if( items.length > 0 ){
+
+	const observer = new IntersectionObserver( callback, {} )
+
+	items.forEach( (item) => {
+		observer.observe( item )
+	})
+
+}

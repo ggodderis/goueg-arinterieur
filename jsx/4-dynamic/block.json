@@ -1,0 +1,20 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "goueg/dynamic",
+	"version": "0.1.0",
+	"title": "Bandeau Dynamic",
+	"category": "arinterieur",
+	"icon": "editor-expand",
+	"description": "Bandeau Dynamic",
+	"example": {},
+	"supports": {
+		"html": false,
+		"align": true
+	},
+	"textdomain": "goueg-labo-blocktype",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}
