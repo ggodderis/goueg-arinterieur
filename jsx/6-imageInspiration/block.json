@@ -1,0 +1,52 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "goueg/image-inspiration",
+	"version": "0.1.0",
+	"title": "Image archive inspiration",
+	"category": "arinterieur",
+	"icon": "camera",
+	"description": "Image inspiration Arinterieur",
+	"example": {},
+	"supports": {
+		"html": false,
+		"align": true
+	},
+	"attributes": {
+		"align": {
+			"type" : "string",
+			"default": "center"
+		},
+		"description": {
+			"type" : "string",
+			"source": "meta",
+			"meta" : "_descriptionInspiration"
+		},
+		"pictureID": {
+			"type": "number",
+			"default": null
+		},
+		"pictureURL": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "src",
+			"selector": ".img-desk"
+		},
+		"pictureAlt": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "alt",
+			"selector": ".img-desk"
+		},
+		"pictureMobile": {
+			"type": "string",
+			"source": "attribute",
+			"attribute": "srcset",
+			"selector": ".img-mobile"
+		}
+	},
+	"textdomain": "goueg-labo-blocktype",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}
