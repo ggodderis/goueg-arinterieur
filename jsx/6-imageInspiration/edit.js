@@ -1,6 +1,6 @@
 import { __ } from '@wordpress/i18n'
-import { useBlockProps, MediaUpload, MediaUploadCheck } from '@wordpress/block-editor'
-import { Placeholder, Button, TextareaControl } from '@wordpress/components'
+import { useBlockProps, MediaUpload, MediaUploadCheck, BlockControls } from '@wordpress/block-editor'
+import { Placeholder, Button, Toolbar, ToolbarGroup, IconButton, ToolbarButton, TextareaControl } from '@wordpress/components'
 import { useSelect, useDispatch } from '@wordpress/data'
 
 
@@ -55,6 +55,25 @@ export default function Edit( props ) {
 	return (
 		<div { ...blockProps }>
 
+			<BlockControls>
+				<ToolbarGroup>
+				<MediaUpload
+					onSelect={onSelectImage}
+					allowedTypes={['image']}
+					value={ props.attributes.pictureID }
+					render={({ open }) => (
+					<ToolbarButton
+						className="custom-button-toolbar"
+						label='Selectionner une image'
+						icon="upload"
+						text="Choisir une image"
+						onClick={open}
+					/>
+					)}
+				/>
+				</ToolbarGroup>
+			</BlockControls>
+
 			{ ! props.attributes.pictureID ? (
 				<MediaUploadCheck>
 					<MediaUpload
@@ -89,18 +108,6 @@ export default function Edit( props ) {
 					<img className="img-desk" src={ props.attributes.pictureURL } alt={ props.attributes.pictureAlt } />
 				</picture>
 
-				
-					{ props.isSelected && (
-
-						<Button
-							className="bt_change_image"
-							onClick={ onRemoveImage }
-							icon="dismiss"
-						>
-							{ __( 'Changer d\'image', 'capitainewp-gut-bases' ) }
-						</Button>
-
-					) }
 				</>
 			) }
 
